@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { intro } from "../data/site-content";
 
-const TYPING_DURATION_MS = 1500;
+const TYPING_DURATION_MS = 1200;
 const TYPING_SPEED_MS = Math.round(
   TYPING_DURATION_MS / intro.greeting.length,
 );
