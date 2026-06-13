@@ -79,10 +79,11 @@ export default function AboutPage() {
                 </button>
                 {showCourses && (
                   <ul className="mt-4 flex flex-wrap gap-2">
-                    {courses.map((course) => (
+                    {courses.map((course, index) => (
                       <li
                         key={course}
-                        className="rounded-full border border-neutral-700 bg-neutral-900 px-4 py-1.5 text-sm text-neutral-200"
+                        className="course-fade-in rounded-full border border-neutral-700 bg-neutral-900 px-4 py-1.5 text-sm text-neutral-200"
+                        style={{ animationDelay: `${index * 40}ms` }}
                       >
                         {course}
                       </li>

@@ -37,6 +37,10 @@
       var(--home-button-delay, 1s) both;
   }
 
+  .course-fade-in {
+    animation: fadeInUpSmooth 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
   .scroll-reveal {
     opacity: 0;
     transform: translateY(12px);
