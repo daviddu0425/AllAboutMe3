@@ -2,7 +2,7 @@ export const site = {
   name: "David Du",
   title: "Software Engineer",
   linkedin: "https://www.linkedin.com/in/david-duu",
-  github: "https://github.com/daduuu",
+  github: "https://github.com/daviddu0425",
 } as const;
 
 export const intro = {
@@ -128,24 +128,24 @@ export const nvidiaProjects: Project[] = [
 export const personalProjects: Project[] = [
   {
     name: "MBTI Predictor",
-    href: "https://github.com/daduuu/MBTIPredictor",
+    href: "https://github.com/daviddu0425/MBTIPredictor",
     description:
       "Predicts personality type from social media posts using RoBERTa, T5, and an LSTM baseline — over 82% test accuracy.",
   },
   {
     name: "Sudokle",
-    href: "https://github.com/daduuu/sudokle",
+    href: "https://github.com/daviddu0425/sudokle",
     description:
       "Daily Sudoku web game with leaderboards and practice mode. Built with React, Node.js, Express, and MySQL.",
   },
   {
     name: "AllAboutMe3",
-    href: "https://github.com/daduuu/AllAboutMe3",
+    href: "https://github.com/daviddu0425/AllAboutMe3",
     description: "The code for this website — React, TypeScript, and Tailwind CSS.",
   },
   {
     name: "Communication Board",
-    href: "https://github.com/daduuu/communication_board",
+    href: "https://github.com/daviddu0425/communication_board",
     description:
       "Messaging platform for students and instructors. Built with Node.js, Express, and MySQL.",
   },

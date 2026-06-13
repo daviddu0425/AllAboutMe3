@@ -9,7 +9,7 @@ const contactLinks = [
   {
     label: "GitHub",
     href: site.github,
-    description: "github.com/daduuu",
+    description: "github.com/daviddu0425",
   },
 ] as const;
 
