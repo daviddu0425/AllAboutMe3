@@ -36,7 +36,7 @@
   }
 
   .parallax-hero {
-    background-image: url("/images/code.png");
+    background-image: url("./assets/code.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
