@@ -28,11 +28,43 @@
   }
 
   .fade-in-delay-1 {
-    animation: fadeIn 0.7s ease-out 0.4s both;
+    animation: fadeInUpSmooth 0.8s cubic-bezier(0.22, 1, 0.36, 1)
+      var(--home-subtitle-delay, 0.5s) both;
   }
 
   .fade-in-delay-2 {
-    animation: fadeIn 0.7s ease-out 0.8s both;
+    animation: fadeIn 0.6s ease-out var(--home-button-delay, 1s) both;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+      opacity 0.4s ease-out,
+      transform 0.4s ease-out;
+  }
+
+  .scroll-reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .scroll-reveal-instant {
+    transition: none !important;
+  }
+
+  .scroll-reveal-fast {
+    transition:
+      opacity 0.25s ease-out,
+      transform 0.25s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
   }
 
   .parallax-bg {
@@ -63,10 +95,21 @@
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translate3d(0, 12px, 0);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeInUpSmooth {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 8px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }

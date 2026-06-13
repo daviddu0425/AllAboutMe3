@@ -2,16 +2,33 @@ import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { intro } from "../data/site-content";
 
+const TYPING_SPEED_MS = 25;
+const GAP_MS = 150;
+const BUTTON_STAGGER_MS = 300;
+
+const typingFinishMs = intro.greeting.length * TYPING_SPEED_MS;
+const subtitleDelayMs = typingFinishMs + GAP_MS;
+const buttonDelayMs = subtitleDelayMs + BUTTON_STAGGER_MS;
+
 export default function HomePage() {
   return (
     <section className="relative flex min-h-[calc(100vh-4rem)] flex-col items-center justify-center px-6 text-center">
-      <div className="relative flex flex-col items-center">
+      <div
+        className="relative flex flex-col items-center"
+        style={
+          {
+            "--home-subtitle-delay": `${subtitleDelayMs}ms`,
+            "--home-button-delay": `${buttonDelayMs}ms`,
+          } as React.CSSProperties
+        }
+      >
         <div className="fade-in">
           <TypeAnimation
-            sequence={[intro.greeting, 2000]}
+            sequence={[intro.greeting, 900]}
             wrapper="h1"
             cursor
             repeat={0}
+            speed={{ type: "keyStrokeDelayInMs", value: TYPING_SPEED_MS }}
             className="text-3xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl"
           />
         </div>

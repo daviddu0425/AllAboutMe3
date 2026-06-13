@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import ScrollHint from "../components/ScrollHint";
+import ScrollReveal from "../components/ScrollReveal";
 import {
   about,
   courses,
@@ -11,20 +13,35 @@ export default function AboutPage() {
   const [showCourses, setShowCourses] = useState(false);
 
   return (
+    <>
     <div className="mx-auto max-w-5xl px-6 py-12">
-      <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+      <ScrollReveal
+        as="h1"
+        className="text-4xl font-bold tracking-tight sm:text-5xl"
+      >
         About Me
-      </h1>
+      </ScrollReveal>
 
-      <p className="mt-8 max-w-3xl text-lg leading-relaxed text-neutral-300">
+      <ScrollReveal className="mt-8 max-w-3xl text-lg leading-relaxed text-neutral-300">
         {about.bio}
-      </p>
+      </ScrollReveal>
 
-      <h2 className="mt-16 text-2xl font-semibold">{about.timelineHeading}</h2>
+      <ScrollReveal
+        as="h2"
+        className="mt-16 text-2xl font-semibold"
+        delay={60}
+      >
+        {about.timelineHeading}
+      </ScrollReveal>
 
       <ol className="mt-8 space-y-8 border-l border-neutral-800 pl-8">
-        {experiences.map((item) => (
-          <li key={item.id} className="relative">
+        {experiences.map((item, index) => (
+          <ScrollReveal
+            as="li"
+            key={item.id}
+            delay={index * 50}
+            className="relative"
+          >
             <span className="absolute -left-[2.4rem] top-1.5 h-3 w-3 rounded-full border-2 border-blue-500 bg-neutral-950" />
             <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
               {item.link ? (
@@ -74,14 +91,16 @@ export default function AboutPage() {
                 )}
               </div>
             )}
-          </li>
+          </ScrollReveal>
         ))}
       </ol>
 
       <section className="mt-16 space-y-8">
-        <h2 className="text-2xl font-semibold">Technical Skills</h2>
-        {skillCategories.map(({ name, skills }) => (
-          <div key={name}>
+        <ScrollReveal as="h2" className="text-2xl font-semibold">
+          Technical Skills
+        </ScrollReveal>
+        {skillCategories.map(({ name, skills }, index) => (
+          <ScrollReveal key={name} delay={index * 50}>
             <h3 className="text-sm font-medium uppercase tracking-wide text-neutral-500">
               {name}
             </h3>
@@ -95,11 +114,11 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
-          </div>
+          </ScrollReveal>
         ))}
       </section>
 
-      <div className="mt-16 flex justify-center">
+      <ScrollReveal className="mt-16 flex justify-center" delay={60}>
         <Link
           to="/projects"
           className="group inline-flex items-center gap-2 rounded-lg border border-neutral-700 px-6 py-3 text-base font-medium text-neutral-200 transition-colors hover:border-neutral-500 hover:bg-neutral-900"
@@ -112,7 +131,9 @@ export default function AboutPage() {
             →
           </span>
         </Link>
-      </div>
+      </ScrollReveal>
     </div>
+    <ScrollHint />
+    </>
   );
 }
