@@ -39,7 +39,7 @@ jobs:
       - name: Build
         working-directory: frontend
         env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
+          VITE_BASE_PATH: /
         run: |
           npm run build
           cp dist/index.html dist/404.html

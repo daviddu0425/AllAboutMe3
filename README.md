@@ -24,4 +24,3 @@ npm run preview
 
 Pushes to `main` run lint, build, and deploy to GitHub Pages via [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
 
-The site will be published at `https://daviddu0425.github.io/AllAboutMe3/`.
