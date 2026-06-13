@@ -27,6 +27,14 @@ export type Experience = {
 
 export const experiences: Experience[] = [
   {
+    id: "uiuc",
+    organization: "UIUC",
+    role: "M.S. in Computer Science",
+    period: "Aug 2026 – Present",
+    link: "https://cs.illinois.edu",
+    description: "Starting my Master's in Computer Science at the University of Illinois Urbana-Champaign.",
+  },
+  {
     id: "nvidia-swe",
     organization: "NVIDIA",
     role: "Software Engineer",
