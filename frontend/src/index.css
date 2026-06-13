@@ -24,16 +24,17 @@
 
 @layer utilities {
   .fade-in {
-    animation: fadeIn 0.7s ease-out both;
+    animation: fadeIn 0.8s ease-out both;
   }
 
   .fade-in-delay-1 {
-    animation: fadeInUpSmooth 0.8s cubic-bezier(0.22, 1, 0.36, 1)
+    animation: fadeInUpSmooth 1s cubic-bezier(0.22, 1, 0.36, 1)
       var(--home-subtitle-delay, 0.5s) both;
   }
 
   .fade-in-delay-2 {
-    animation: fadeIn 0.6s ease-out var(--home-button-delay, 1s) both;
+    animation: fadeInUpSmooth 0.7s cubic-bezier(0.22, 1, 0.36, 1)
+      var(--home-button-delay, 1s) both;
   }
 
   .scroll-reveal {

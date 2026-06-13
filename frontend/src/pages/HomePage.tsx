@@ -2,11 +2,14 @@ import { Link } from "react-router-dom";
 import { TypeAnimation } from "react-type-animation";
 import { intro } from "../data/site-content";
 
-const TYPING_SPEED_MS = 25;
-const GAP_MS = 150;
-const BUTTON_STAGGER_MS = 300;
+const TYPING_DURATION_MS = 1500;
+const TYPING_SPEED_MS = Math.round(
+  TYPING_DURATION_MS / intro.greeting.length,
+);
+const GAP_MS = 200;
+const BUTTON_STAGGER_MS = 400;
 
-const typingFinishMs = intro.greeting.length * TYPING_SPEED_MS;
+const typingFinishMs = TYPING_DURATION_MS;
 const subtitleDelayMs = typingFinishMs + GAP_MS;
 const buttonDelayMs = subtitleDelayMs + BUTTON_STAGGER_MS;
 
@@ -24,7 +27,7 @@ export default function HomePage() {
       >
         <div className="fade-in">
           <TypeAnimation
-            sequence={[intro.greeting, 900]}
+            sequence={[intro.greeting, 1000]}
             wrapper="h1"
             cursor
             repeat={0}
